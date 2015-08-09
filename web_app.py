@@ -17,6 +17,11 @@ def main():
     return render_template('main_page.html')
 
 
+@app.route('/add')
+def add_recipe():
+    return render_template('new_recipe.html')
+
+
 
 
 

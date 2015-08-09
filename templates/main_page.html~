@@ -36,7 +36,7 @@
 
 <br><br>
 
-<a href="{{ url_for("add_recipe")}}"><h2> Add You'r Recipe! </h2> </a>
+<a href="{{ url_for(add)}}"><h2> Add You'r Recipe! </h2> </a>
 
 
 
