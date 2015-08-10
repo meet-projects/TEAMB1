@@ -1,8 +1,31 @@
 .country_images {
-	height: 150px;
-	width : 200px;
+	height: 50px;
+	width : 80px;
 }
 .food{
-	height : 200px;
-	width : 250px;
+	height :170px;
+	width : 210px;
+}
+
+
+body {
+    background-image: url("http://newartcolorz.com/images/2014/9/red-backgrounds-18837-19317-hd-wallpapers.jpg");
+	color:#FFCC66;    
+} 
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+	color:#FFCC66;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
 }
