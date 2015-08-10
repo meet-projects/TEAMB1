@@ -22,7 +22,7 @@
 <div class="row_main_rec"><div><b>{{recipe.name}}</b></div><div><a href="{{url_for('view_recipe',Recipe_id=recipe.id)}}" target="_blank"><img src="{{recipe.photo}}" alt="" class="img_country_food_shape"></a></div><div><p><a href="{{url_for('view_recipe',Recipe_id=recipe.id)}}" target="_blank"> <br>To the recipe!</a></p></div></div>
 {%endfor%}
 
-<a href="{{ url_for('main')}}"><h2> Back </h2> </a>
+<a herf="{{url_for('main')}}">Back to Main page</a>
 
 
 </div>
