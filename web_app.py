@@ -34,8 +34,9 @@ def add_recipe():
         	new_ingr = request.form['ingr']
         	new_nationality = request.form['origin']
         	new_how_to = request.form['how_to']
-		new_photo = request.form['photo']		
-		new_recipe= Recipe(name=new_name,ingr=new_ingr,origin=new_nationality,how_to=new_how_to , photo=new_photo)
+		new_photo = request.form['photo']
+		new_story = request.form['story']		
+		new_recipe= Recipe(name=new_name,ingr=new_ingr,origin=new_nationality,how_to=new_how_to , photo=new_photo, story = new_story)
 		session.add(new_recipe)
 		session.commit()
 		return redirect(url_for('view_recipe',Recipe_id=new_recipe.id))

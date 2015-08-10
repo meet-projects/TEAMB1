@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Culturecipe
+  </title>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+  
+  
+</head>
+
+<body>
+
+
+
 Write your own Recipy!<br><br><br>
 <span id = "fullName"> Full name</span>
 <input type="text"><br>
@@ -49,3 +64,11 @@ Rememeber! Clicking on this butoon means <br> all the world will be able to watc
  
 </select> <br><br>
 </form>
+
+<a href="{{ url_for('main')}}"><h2> Back </h2> </a>
+
+
+</body>
+
+
+</html

@@ -15,4 +15,5 @@ class Recipe(Base):
     origin = Column(String)
     story = Column(String)	
     photo = Column(String)
+    
 
