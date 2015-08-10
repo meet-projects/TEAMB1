@@ -2,29 +2,43 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 # SQLAlchemy stuff
-#from database_setup import Base Person <--- Import your tables here!!
-#from sqlalchemy import create_engine
-#from sqlalchemy.orm import sessionmaker
-#engine = create_engine('sqlite:///crudlab.db')
-#Base.metadata.bind = engine
-#DBSession = sessionmaker(bind=engine)
-#session = DBSession()
+from database_setup import Base,Recipe #<--- Import your tables here!!
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+engine = create_engine('sqlite:///crudlab.db')
+Base.metadata.create_all(engine)
+DBSession = sessionmaker(bind=engine)
+session = DBSession()
 
 
-#YOUR WEB APP CODE GOES HERE
 @app.route('/')
 def main():
     return render_template('main_page.html')
 
 
-@app.route('/add')
+
+
+from flask import Flask, render_template, request, redirect,url_for
+
+@app.route('/recipe/<int:Recipe_id>')
+def view_recipe(Recipe_id):
+    recipe = session.query(Recipe).filter_by(id=Recipe_id).first()
+    return render_template('recipe.html',recipe=recipe)
+
+@app.route('/add', methods=['GET', 'POST'])
 def add_recipe():
-    return render_template('new_recipe.html')
-
-
-
-
-
+	if request.method == 'GET':	
+		return render_template('new_recipe.html')
+	else:
+		new_name = request.form['name']
+        	new_ingr = request.form['ingr']
+        	new_nationality = request.form['origin']
+        	new_how_to = request.form['how_to']
+		new_photo = request.form['photo']		
+		new_recipe= Recipe(name=new_name,ingr=new_ingr,origin=new_nationality,how_to=new_how_to , photo=new_photo)
+		session.add(new_recipe)
+		session.commit()
+		return redirect(url_for('view_recipe',id=new_recipe.id))
 
 
 if __name__ == '__main__':
