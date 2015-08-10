@@ -2,11 +2,23 @@
 	height: 50px;
 	width : 80px;
 }
+
+p {
+    font-size: 20px;
+}
+
+p2 { 	
+    font-size: 20px;
+}
+
 .food{
 	height :170px;
 	width : 210px;
 }
 
+#imagelink { height : 200px;
+	     width  : 200px;
+}
 
 body {
     background-image: url("http://newartcolorz.com/images/2014/9/red-backgrounds-18837-19317-hd-wallpapers.jpg");
@@ -28,4 +40,9 @@ a:hover {
 
 a:active {
     text-decoration: underline;
+}
+#sidebackground {
+			height : 920px;
+			width  : 300px;
+			float  : right;
 }
