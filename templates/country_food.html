@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="css_food.css"> 
+</head>
+
+<body>
+
+<div name="culture_name" align="center"><h1>{{culture_name}}</h1></div>
+<br>
+
+
+<div name="menu_title" align="center"><h2>__---__</h2></div>
+
+<center>
+<div name="real_menu" class="">
+
+
+{% for rec_name in all_recs_names %}
+<div class="row_main_rec"><div><b>{{recipe_name}}</b></div><div><a href="{{rec_page}}" target="_blank"><img src="{{img_name}}" alt="" class="img_country_food_shape"></a></div><div><p><a href="{{rec_page}}" target="_blank"> <br>To the recepie!</a></p></div></div>
+{%endfor%}
+
+
+
+
+</div>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
