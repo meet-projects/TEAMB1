@@ -3,12 +3,14 @@
 
 <head>
 <title></title>
-<link rel="stylesheet" type="text/css" href="styles.css"> 
+ <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+
 </head>
 
 <body>
-<div id ='sidebackground'> <img src="http://i183.photobucket.com/albums/x168/Love_Chibi/brown-grunge-background.jpg"> </div>
- <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+<!-- <div id ='sidebackground'> <img src="http://i183.photobucket.com/albums/x168/Love_Chibi/brown-grunge-background.jpg"> </div> -->
+ 
+
 
 <div name="culture_name" align="center"><h1>{{country}}</h1><div>
 <br>
@@ -21,7 +23,13 @@
 
 
 {% for recipe in cult %}
-<div class="row_main_rec"><div><b>{{recipe.name}}</b></div><div><a href="{{url_for('view_recipe',Recipe_id=recipe.id)}}" target="_blank"><img src="{{recipe.photo}}" alt="" class="img_country_food_shape" style="width:300px;height=300px"></a></div><div><p><a href="{{url_for('view_recipe',Recipe_id=recipe.id)}}" target="_blank"> <br>To the recipe!</a></p></div></div>
+<div class="row_main_rec">
+  <div><b>{{recipe.name}}</b></div>
+  <div>
+    <a href="{{url_for('view_recipe',Recipe_id=recipe.id)}}" target="_blank"><img src="{{recipe.photo}}" alt="" class="img_country_food_shape" style="width:300px;height=300px"></a>
+  </div>
+  <div><p><a href="{{url_for('view_recipe',Recipe_id=recipe.id)}}" target="_blank"> <br>To the recipe!</a></p></div>
+</div>
 {%endfor%}
 
 <a href="{{ url_for('main')}}"><h2> Back </h2> </a>
