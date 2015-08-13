@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect,url_for
+from flask import Flask, render_template
 app = Flask(__name__)
 
 # SQLAlchemy stuff
@@ -15,21 +15,10 @@ session = DBSession()
 def main():
     return render_template('main_page.html')
 
-@app.route('/search' , methods=['GET','POST'])
-def search():
-	if request.method == 'POST':
-		word = request.form["search_word"]
-		matches = []
-		recipes=session.query(Recipe).all()
-		for recipe in recipes:
-			if word in recipe.name.lower():
-				matches.append(recipe)
-		return render_template('search.html', matches = matches)
-	else: 
-		return render_template('search.html',matches=[])
-			
-		
 
+
+
+from flask import Flask, render_template, request, redirect,url_for
 
 @app.route('/recipe/<int:Recipe_id>')
 def view_recipe(Recipe_id):
@@ -51,10 +40,6 @@ def add_recipe():
 		session.add(new_recipe)
 		session.commit()
 		return redirect(url_for('view_recipe',Recipe_id=new_recipe.id))
-
-
-
-
 
 
 @app.route('/culture/<string:culture_name>')

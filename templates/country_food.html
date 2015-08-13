@@ -26,9 +26,9 @@
 <div class="row_main_rec">
   <div><b>{{recipe.name}}</b></div>
   <div>
-    <a href="{{url_for('view_recipe',Recipe_id=recipe.id)}}" target="_blank"><img src="{{recipe.photo}}" alt="" class="img_country_food_shape" style="width:300px;height=300px"></a>
+    <a href="{{url_for('view_recipe',Recipe_id=recipe.id)}}" ><img src="{{recipe.photo}}" alt="" class="img_country_food_shape" style="width:300px;height=300px"></a>
   </div>
-  <div><p><a href="{{url_for('view_recipe',Recipe_id=recipe.id)}}" target="_blank"> <br>To the recipe!</a></p></div>
+  <div><p><a href="{{url_for('view_recipe',Recipe_id=recipe.id)}}"> <br>To the recipe!</a></p></div>
 </div>
 {%endfor%}
 
