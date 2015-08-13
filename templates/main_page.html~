@@ -40,7 +40,7 @@
 <br><br>
 
 <a href="{{ url_for('add_recipe')}}"><h2> Add Your Recipe! </h2> </a>
-<div align="right"><a href="">Go to Search page</a></div>
+<div align="left"><a href=""><h2>Go to Search page</h2></a></div>
 
 
 
