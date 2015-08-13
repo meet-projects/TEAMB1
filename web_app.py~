@@ -63,6 +63,12 @@ def go_to_cult(culture_name):
 	return render_template('country_food.html',cult=cult,country=culture_name)
 	
 
+session.delete(session.query(Recipe).filter_by(id=4).first())
+session.commit()
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
